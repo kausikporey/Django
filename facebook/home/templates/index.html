@@ -1,0 +1,28 @@
+{% extends 'header.html' %}
+
+{% block user %}
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="">{{name}}</a>
+  </li>
+{% endblock %}
+
+{% block photo %}
+<form method = "post" action="/imageupload" enctype="multipart/form-data"> 
+  {% csrf_token %} 
+  {{ form.as_p }} 
+  <button class="btn btn-primary" type="submit"><b>UploadPhoto</b></button> 
+</form> 
+{% endblock %}
+
+{% block body %}
+{% for image in img %}
+<div class="card" style="height:35rem;width:25.60rem; background-color:black;">
+	<img class="card-img-top"  src="media/{{image}}" height="75%" width="100%" alt="Card image cap">
+	<div class="card-body">
+	  <h5 class="card-title">Kousik Porey</h5>
+	  <a href="#" class="card-link">Like</a>
+	  <a href="#" class="card-link">Comment</a>
+	</div>
+  </div>
+{% endfor %}  
+{% endblock %}

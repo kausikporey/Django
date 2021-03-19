@@ -1,0 +1,35 @@
+<DOCTYPE HTML!>
+    <html>
+         <head>
+              <title>wesite</title>
+              <link rel = "stylesheet" type = "text/css" href = "">
+         </head>
+    
+         <body>
+            <h1>Welcome to the text analyzer.Enter your text below.</h1>
+            <form action="/analyzetext" method="GET">
+                 <textarea name='text' style='margin:0px;width:721px;height:95px;'></textarea><br><br>
+                 <input type="checkbox" name="removepunc">Remove Punctuations<br>
+                 <input type="checkbox" name="capitalize">Capitalize Text<br>
+                 <input type="checkbox" name="removespace">Remove Space<br>
+                 <input type="checkbox" name="newlineremove">Remove New Line<br>
+                 <button type="submit">AnlyzeText</button>
+            </form>
+         </body>
+    </html>
+
+
+
+
+    <DOCTYPE HTML!>
+        <html>
+             <head>
+                  <title>analyzetext</title>
+                  <link rel = "stylesheet" type = "text/css" href = "">
+             </head>
+        
+             <body>
+                <h1>Analyzed Text - {{purpose}}</h1>
+                <p><pre>{{text}}</pre></p>
+             </body>
+        </html>
